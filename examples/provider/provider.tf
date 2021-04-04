@@ -1,1 +1,1 @@
-provider "scaffolding" {}
+provider "openpgp" {}
