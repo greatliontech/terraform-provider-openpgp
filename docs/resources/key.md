@@ -9,23 +9,30 @@ description: |-
 
 
 
+## Example Usage
 
+```terraform
+resource "openpgp_key" "foo" {
+  name  = "John Doe"
+  email = "john.doe@example.com"
+}
+```
 
 ## Schema
 
 ### Required
 
-- **email** (String)
+- **email** (String) Email for this key
 
 ### Optional
 
-- **comment** (String)
-- **name** (String)
+- **comment** (String) Comment for this key
+- **name** (String) Name for this key
 
 ### Read-only
 
-- **id** (String) The ID of this resource.
-- **private_key_armor** (String)
-- **public_key_armor** (String)
+- **id** (String) Fingerprint
+- **private_key_armor** (String) Private key in armor format
+- **public_key_armor** (String) Public key in armor format
 
 
