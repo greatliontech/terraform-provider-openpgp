@@ -1,20 +1,18 @@
 ---
-page_title: "scaffolding Provider"
+page_title: "openpgp Provider"
 subcategory: ""
 description: |-
   
 ---
 
-# scaffolding Provider
+# openpgp Provider
 
 
 
 ## Example Usage
 
 ```terraform
-provider "scaffolding" {
-  # example configuration here
-}
+provider "scaffolding" {}
 ```
 
 ## Schema
