@@ -73,6 +73,9 @@ func resourceKeyCreate(ctx context.Context, d *schema.ResourceData, m interface{
 	if err := ent.PrivateKey.Serialize(w); err != nil {
 		return diag.FromErr(err)
 	}
+	if err := w.Close(); err != nil {
+		return diag.FromErr(err)
+	}
 	d.Set("private_key_armor", buf.String())
 
 	buf.Reset()
@@ -82,6 +85,9 @@ func resourceKeyCreate(ctx context.Context, d *schema.ResourceData, m interface{
 		return diag.FromErr(err)
 	}
 	if err := ent.PrimaryKey.Serialize(w); err != nil {
+		return diag.FromErr(err)
+	}
+	if err := w.Close(); err != nil {
 		return diag.FromErr(err)
 	}
 	d.Set("public_key_armor", buf.String())
